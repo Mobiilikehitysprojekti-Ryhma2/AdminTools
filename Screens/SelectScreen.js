@@ -34,6 +34,10 @@ const SelectScreen = ({ navigation }) => {
                 onPress={() => navigation.navigate("Map")}
                 title="Reittien luonti"
               />
+              <Button
+                onPress={() => navigation.navigate("Store-upload")}
+                title="Lähetä Avatar storeen"
+              />
             </SafeAreaView>
           );
         };

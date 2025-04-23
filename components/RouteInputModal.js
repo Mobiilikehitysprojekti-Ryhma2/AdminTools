@@ -20,9 +20,9 @@ export default function RouteInputModal({ visible, onSave, onCancel }) {
      
         <View style={styles.modalContent}>
         
-          <Text style={styles.label}>Route Name</Text>
+          <Text style={styles.label}>Reitin nimi</Text>
           <TextInput
-            placeholder="Enter route name"
+            placeholder="Reitin nimi"
             value={name}
             onChangeText={setName}
             style={styles.input}
@@ -39,8 +39,8 @@ export default function RouteInputModal({ visible, onSave, onCancel }) {
           </Picker>
 
           <View style={styles.buttons}>
-            <Button title="Cancel" onPress={onCancel} />
-            <Button title="Save Route" onPress={handleSave} />
+            <Button title="Peruuta" onPress={onCancel} />
+            <Button title="Tallenna reitti" onPress={handleSave} />
           </View>
         </View>
       </View>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Dim the background
+    backgroundColor: "rgba(0, 0, 0, 0.5)", 
   },
   modalContainer: {
     width: "80%",

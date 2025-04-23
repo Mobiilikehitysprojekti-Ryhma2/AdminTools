@@ -275,8 +275,19 @@ const MapScreen = ({ navigation }) => {
           )}
          
         </MapView>
-        <Button title="Finish Route" onPress={() => setRouteModalVisible(true)} />
-       
+        <Button title="Lähetä reitti" onPress={() => setRouteModalVisible(true)} style={styles.modalTitle}/>
+
+        <RouteInputModal
+
+visible={routeModalVisible}
+onSave={(details) => {
+  sendMarkersToFirebase(details);
+  setRouteModalVisible(false);
+}}
+onCancel={() => setRouteModalVisible(false)}
+title="Luo uusi reitti"
+modalBackgroundColor="blue"
+/>
         <SettingsModal
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
@@ -284,16 +295,7 @@ const MapScreen = ({ navigation }) => {
           currentMapType={mapType}
         />
        
-<RouteInputModal
-  visible={routeModalVisible}
-  onSave={(details) => {
-    sendMarkersToFirebase(details);
-    setRouteModalVisible(false);
-  }}
-  onCancel={() => setRouteModalVisible(false)}
-  modalTitle="Create New Route"
-  modalBackgroundColor="blue"
-/>
+
 
         <MainAppBar setMarkers={setMarkers} setModalVisible={setModalVisible} setDistance={setDistance} distance={distance}/>
 
@@ -302,6 +304,11 @@ const MapScreen = ({ navigation }) => {
   );
 }
 const styles = StyleSheet.create({
- 
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 10,
+    
+  },
 });
 export default MapScreen;

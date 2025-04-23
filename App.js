@@ -5,7 +5,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StatusBar } from "react-native";
 
 import SelectScreen from "./Screens/SelectScreen";
-import MapScreen from "./Screens/MapScreen"
+import MapScreen from "./Screens/MapScreen";
+import StoreuploadScreen from "./Screens/StoreuploadScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ function AppNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Select" component={SelectScreen} />
       <Stack.Screen name="Map" component={MapScreen} />
+      <Stack.Screen name="Store-upload" component={StoreuploadScreen} />
     </Stack.Navigator>
   );
 }
